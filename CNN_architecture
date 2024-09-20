@@ -1,0 +1,11 @@
+model = Sequential([                                       #CNN Architecture
+    Conv2D(32, (3, 3), activation='relu', input_shape=(img_width, img_height, 3)),
+    MaxPooling2D((2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Conv2D(128, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dense(3, activation='softmax')  # num_classes is the number of output classes
+])

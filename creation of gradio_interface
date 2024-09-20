@@ -1,0 +1,18 @@
+#!pip install gradio==3.50
+import gradio as gr
+from PIL import Image
+
+def predict_image(image):
+    # Resize the image to 180x180 within the function if needed
+    image = Image.fromarray(image).resize((180, 180))
+
+    # Placeholder for image prediction logic
+    # Return a dictionary with class labels and their probabilities
+    return {"label1": 0.5, "label2": 0.3, "label3": 0.2}
+
+# Define the input and output using the correct syntax
+image = gr.Image()
+label = gr.Label(num_top_classes=3)
+
+# Create the Gradio interface
+gr.Interface(fn=predict_image, inputs=image, outputs=label).launch(debug=True)

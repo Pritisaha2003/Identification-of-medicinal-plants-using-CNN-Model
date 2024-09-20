@@ -1,0 +1,26 @@
+model.save('model1.h5')       #saving the trained model
+model1 = load_model('model1.h5')
+
+img_path = '/content/kama_ingredients_updated_600x400_0071_banyan_leaf.jpg'  # Replace with the path to your new image
+img = image.load_img(img_path, target_size=(400, 300))  # Resize to match model input dimensions
+img_array = image.img_to_array(img)
+img_array = np.expand_dims(img_array, axis=0)  # Add a batch dimension
+img_array /= 255.0  # Rescale pixel values to [0, 1] (same as during training)
+
+# Make predictions with the loaded model
+predictions = model1.predict(img_array)
+
+# Assuming you have class labels during training, you can get the class labels
+class_labels = ['aloe vera', 'radish','taro']  # Define your class labels
+
+# Get the predicted class label
+predicted_class = np.argmax(predictions)
+predicted_label = class_labels[predicted_class]
+
+print(f"Predicted Class: {predicted_label}")
+
+def predict_image(img):
+  img_4d=img.reshape(-1,180,180,3)
+  prediction=model.predict(img_4d)[0]
+  return {class_names[i]: float(prediction[i]) for i in range(3)}
+

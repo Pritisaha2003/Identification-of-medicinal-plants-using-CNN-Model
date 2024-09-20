@@ -1,0 +1,10 @@
+datagen = ImageDataGenerator(
+    rescale=1.0 / 255.0,       # Rescale pixel values to [0, 1]
+    rotation_range=20,        # Randomly rotate images by up to 20 degrees
+    width_shift_range=0.5,    # Randomly shift the width of images0.2
+    height_shift_range=0.5,   # Randomly shift the height of images0.2
+    shear_range=0.5,          # Apply shear transformation0.2
+    zoom_range=0.5,           # Apply zoom transformation0.2
+    horizontal_flip=True,     # Randomly flip images horizontally
+    fill_mode='nearest'       # Fill in missing pixels with the nearest value
+)

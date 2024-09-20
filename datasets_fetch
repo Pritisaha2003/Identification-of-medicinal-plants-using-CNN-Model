@@ -1,0 +1,11 @@
+data_dir='/content/drive/MyDrive/datasets_plants/Datasets'     #datasets to be import from drive location or link
+
+train_data= datagen.flow_from_directory(
+    data_dir,
+    target_size=(400, 300),
+    batch_size=batch_size,
+    class_mode='categorical'  # Use 'categorical' for multi-class classification
+)
+
+from google.colab import drive
+drive.mount('/content/drive')

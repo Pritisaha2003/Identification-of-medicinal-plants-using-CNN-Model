@@ -1,0 +1,8 @@
+!pip install --quiet gradio
+!pip install gradio
+import gradio as gr
+from google.colab import drive
+drive.mount('/content/drive')
+data_dir ='https://drive.google.com/drive/u/0/folders/name of drive link here'
+img_width, img_height = 400, 300
+batch_size = 15

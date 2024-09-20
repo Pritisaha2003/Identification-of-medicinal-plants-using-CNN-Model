@@ -1,0 +1,23 @@
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',           #Model Compilation
+              metrics=['accuracy'])
+
+history = model.fit(train_data, epochs=8)        #Model Training
+
+output:
+Epoch 1/8
+1/1 [==============================] - 10s 10s/step - loss: 1.0943 - accuracy: 0.3846
+Epoch 2/8
+1/1 [==============================] - 4s 4s/step - loss: 3.4064 - accuracy: 0.3846
+Epoch 3/8
+1/1 [==============================] - 4s 4s/step - loss: 6.5323 - accuracy: 0.3077
+Epoch 4/8
+1/1 [==============================] - 6s 6s/step - loss: 3.0298 - accuracy: 0.3077
+Epoch 5/8
+1/1 [==============================] - 4s 4s/step - loss: 1.4614 - accuracy: 0.3077
+Epoch 6/8
+1/1 [==============================] - 4s 4s/step - loss: 1.0172 - accuracy: 0.3077
+Epoch 7/8
+1/1 [==============================] - 6s 6s/step - loss: 0.9924 - accuracy: 0.6154
+Epoch 8/8
+1/1 [==============================] - 4s 4s/step - loss: 0.9532 - accuracy: 0.6154

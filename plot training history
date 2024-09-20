@@ -1,0 +1,21 @@
+#Plot the training and validation accuracy and loss over epochs.Plot the training and validation accuracy and loss over epochs.
+
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 2, 1)
+plt.plot(history.history['accuracy'], label='train accuracy')
+plt.plot(history.history['val_accuracy'], label='validation accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.title('Accuracy over epochs')
+
+plt.subplot(1, 2, 2)
+plt.plot(history.history['loss'], label='train loss')
+plt.plot(history.history['val_loss'], label='validation loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.title('Loss over epochs')
+
+plt.show()
